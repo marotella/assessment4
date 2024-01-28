@@ -19,6 +19,14 @@ module.exports = {
         console.log(randomFortune)
       
         res.status(200).send(randomFortune);
+    },
+    getNumber: (req, res) => {
+
+        // choose random fortune
+        let randomNumber = Math.floor(Math.random() * 10);
+        console.log(randomNumber)
+        let luckyNumber = `Your lucky number is ${randomNumber}`
+        res.status(200).send(luckyNumber);
     }
 
 }
