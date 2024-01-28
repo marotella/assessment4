@@ -22,11 +22,25 @@ module.exports = {
     },
     getNumber: (req, res) => {
 
-        // choose random fortune
+        // choose random number
         let randomNumber = Math.floor(Math.random() * 10);
         console.log(randomNumber)
         let luckyNumber = `Your lucky number is ${randomNumber}`
         res.status(200).send(luckyNumber);
-    }
+    },
+    getDate: (req, res) => {
 
+        // choose random date
+        let date = Date.now()
+        let currentDate = new Date (date)
+        console.log(currentDate)
+        let todayDate = `Today's date is: ${currentDate}`
+        res.status(200).send(todayDate);
+    },
+    getActivity: (req,res) =>{
+        const activities = ["Call your mom.", "Unclench your jaw.", "Practice 1-2 algos.", "Stretch for 10 mins.", "Drink some water."]
+        let randomIndex = Math.floor(Math.random() * activities.length);
+        let randomActivity = activities[randomIndex];
+        res.status(200).send(randomActivity)
+    }
 }
